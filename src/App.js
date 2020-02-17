@@ -4,8 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import './App.scss';
 
 import Header from './components/header/header.component';
-import HomePage from './pages/home/home.page';
-import ShopPage from './pages/shop/shop.page';
+import HomePage from './pages/home/home.component';
+import ShopPage from './pages/shop/shop.component';
 
 function App() {
   return (
