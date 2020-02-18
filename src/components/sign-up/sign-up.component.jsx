@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './sign-up.styles.scss';
+
 import CustomButton from './../custom-button/custom-button.component';
 import FormInput from './../form-input/form-input.component';
 
@@ -42,7 +44,7 @@ class SignUp extends Component {
         email,
         password
       );
-      createUserProfileDocument(userAuth, { displayName });
+      await createUserProfileDocument(userAuth, { displayName });
       this.setState(INITIAL_STATE);
     } catch (error) {
       console.error(error);
@@ -55,7 +57,7 @@ class SignUp extends Component {
       <div className="sign-up">
         <h2 className="title">I do not have an account</h2>
         <span>Sign up with your email and password</span>
-        <form className="sign-up-form">
+        <form className="sign-up-form" onSubmit={this.handleSubmit}>
           <FormInput
             name="displayName"
             type="text"
@@ -82,10 +84,10 @@ class SignUp extends Component {
           />
           <FormInput
             name="confirmPassword"
-            type="confirmPassword"
+            type="password"
             handleChange={this.handleChange}
             value={confirmPassword}
-            label="confirmPassword"
+            label="confirm password"
             required
           />
           <CustomButton type="submit">SIGN UP</CustomButton>
