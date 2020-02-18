@@ -7,3 +7,7 @@ a {
   text-decoration: none; // remove underline from a links
   color: black; // make a links black
 }
+
+* {
+  box-sizing: border-box;
+}
