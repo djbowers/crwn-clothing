@@ -3,17 +3,17 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import './App.scss';
-
-import HomePage from './pages/home/home.page';
-import ShopPage from './pages/shop/shop.page';
-import SignInAndSignUpPage from './pages/signin/sign-in-and-sign-up.page';
-import CheckoutPage from './pages/checkout/checkout.page';
-
+import CheckoutPage from './pages/checkout/checkout-page.component';
+import HomePage from './pages/home/home-page.component';
+import ShopPage from './pages/shop/shop-page.component';
+import SignInAndSignUpPage from './pages/signin/sign-in-and-sign-up-page.component';
 import Header from './components/header/header.component';
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+
+import './App.scss';
 
 class App extends Component {
   unsubscribeFromAuth = null;
